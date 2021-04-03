@@ -1,24 +1,24 @@
-# README
+# Rails Engine
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a sales API made in a Rails backend!
 
-Things you may want to cover:
+Sales engine in Rails... Rails engine...
 
 * Ruby version
+  * 2.5.3
 
-* System dependencies
+* Rails version
+  * 5.2.5
 
 * Configuration
 
+`bundle install`
+
 * Database creation
 
-* Database initialization
+Simply run `rails db:create` in your terminal/command line!
+Once your database has been created, run `rails db:{migrate,seed}` and let rails do the rest!
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`bundle exec rspec`
