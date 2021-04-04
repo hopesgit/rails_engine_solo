@@ -1,4 +1,8 @@
 class Invoice < ApplicationRecord
-  belongs_to :customer_id
-  belongs_to :merchant_id
+  validates :customer_id, presence: true
+  validates :merchant_id, presence: true
+  validates :status, presence: true
+
+  belongs_to :customer
+  belongs_to :merchant
 end
