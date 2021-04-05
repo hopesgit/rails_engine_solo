@@ -31,6 +31,15 @@ describe MerchantsFacade do
         expect(test.count).to eq(30)
         expect(test).to eq(merchants)
       end
+
+      it 'allows per_page and page to be specified' do
+        merchants = Merchant.all[15..29]
+
+        test = MerchantsFacade.index(15, 2)
+        expect(test).to eq(merchants)
+        expect(test.count).to eq(15)
+        expect(test[0]).to_not eq(Merchant.first)
+      end
     end
   end
 end
