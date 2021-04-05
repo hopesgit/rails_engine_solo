@@ -1,6 +1,6 @@
 class Api::V1::MerchantsController < ApplicationController
   def index
-    @all = if params[:page] && params[:per_page]
+    all = if params[:page] && params[:per_page]
             MerchantsFacade.index(params[:per_page], params[:page])
           elsif params[:page]
             MerchantsFacade.index(20, params[:page])
@@ -9,9 +9,7 @@ class Api::V1::MerchantsController < ApplicationController
           else
             MerchantsFacade.index
           end
-    render json: @all.to_json
-    # page = params[:page] if !params[:page].nil?
-    # per_page = params[:perPage] if !params[:perPage].nil?
-    # render json: MerchantsFacade.index(perPage, page).to_json
+
+    render json: MerchantsSerializer.new(all).serialized_json
   end
 end

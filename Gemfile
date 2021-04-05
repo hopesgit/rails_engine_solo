@@ -33,12 +33,12 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'fast_jsonapi'
   gem 'pry'
   gem 'rspec-rails'
 end
 
 group :development do
-  gem 'fast_jsonapi'
   gem 'listen', '>= 3.0.5', '< 3.2'
 end
 

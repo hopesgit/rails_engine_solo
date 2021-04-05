@@ -9,16 +9,16 @@ describe 'When I send a request to "/api/v1/merchants"' do
     end
 
     it 'I get a successful response' do
-      response = get '/api/v1/merchants'
+      get '/api/v1/merchants'
 
       expect(response).to have_http_status(200)
     end
 
     it 'I get 20 merchants by default' do
-      response = get '/api/v1/merchants'
-      parsed_response = JSON.parse(response.body, symbolize_names: true)
+      get('/api/v1/merchants')
+      parsed_response = JSON.parse(response.body, symbolize_names: true)[:data]
 
-      expect(parsed_response.all? {|record| record.class == Merchant }).to be_true
+      expect(parsed_response.all? {|record| record[:type] == "merchants" }).to be true
       expect(parsed_response.count).to eq(20)
     end
   end
