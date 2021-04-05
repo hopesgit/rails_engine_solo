@@ -7,6 +7,7 @@ describe MerchantsFacade do
           create(:merchant)
         end
       end
+      # happy_path
 
       it 'with no given params' do
         merchants = Merchant.first(20)
@@ -39,6 +40,21 @@ describe MerchantsFacade do
         expect(test).to eq(merchants)
         expect(test.count).to eq(15)
         expect(test[0]).to_not eq(Merchant.first)
+      end
+
+      # sad path
+      it 'hopefully doesn\'t break when a page has no records' do
+        test = MerchantsFacade.index(40, 2)
+
+        expect(test).to eq([])
+      end
+
+      it 'only reports the number of records available' do
+        merchants = Merchant.all
+        test = MerchantsFacade.index(50)
+
+        expect(test).to eq(merchants)
+        expect(test.count).to eq(40)
       end
     end
   end
