@@ -9,7 +9,7 @@ class Api::V1::MerchantsController < ApplicationController
           else
             MerchantsFacade.index
           end
-    render json: @all
+    render json: @all.to_json
     # page = params[:page] if !params[:page].nil?
     # per_page = params[:perPage] if !params[:perPage].nil?
     # render json: MerchantsFacade.index(perPage, page).to_json
