@@ -6,7 +6,7 @@ describe MerchantsFacade do
         create(:merchant)
       end
 
-      merchants = Merchant.all
+      merchants = Merchant.first(20)
 
       expect(MerchantsFacade.index).to be_an Array
       expect(MerchantsFacade.index.count).to eq(20)
