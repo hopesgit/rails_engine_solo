@@ -13,9 +13,10 @@ describe 'When I send a get request to "/api/v1/merchants/:id"' do
 
   it 'returns data for the requested merchant' do
     get "/api/v1/merchants/#{@merchant.id}"
+    # binding.pry
 
     parsed_response = JSON.parse(response.body, symbolize_names: true)[:data]
 
-    expect(parsed_response[:name]).to eq(@merchant.name)
+    expect(parsed_response[:attributes][:name]).to eq(@merchant.name)
   end
 end
