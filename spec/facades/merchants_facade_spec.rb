@@ -57,5 +57,14 @@ describe MerchantsFacade do
         expect(test.count).to eq(40)
       end
     end
+
+    describe '.show' do
+      it 'fetches a merchant' do
+        merchant = create(:merchant)
+        test = MerchantsFacade.show(merchant.id)
+
+        expect(test).to eq(merchant)
+      end
+    end
   end
 end

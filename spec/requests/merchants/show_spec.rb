@@ -13,10 +13,18 @@ describe 'When I send a get request to "/api/v1/merchants/:id"' do
 
   it 'returns data for the requested merchant' do
     get "/api/v1/merchants/#{@merchant.id}"
-    # binding.pry
 
     parsed_response = JSON.parse(response.body, symbolize_names: true)[:data]
 
     expect(parsed_response[:attributes][:name]).to eq(@merchant.name)
+  end
+
+  # sad path
+  xit 'can\'t return data for a merchant that doesn\'t exist' do
+    get '/api/v1/merchants/1000000'
+
+    parsed_response = JSON.parse(response.body)
+
+    expect(parsed_response).to eq([])
   end
 end

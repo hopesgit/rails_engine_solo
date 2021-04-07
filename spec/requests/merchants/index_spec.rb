@@ -19,7 +19,7 @@ describe 'When I send a request to "/api/v1/merchants"' do
       get('/api/v1/merchants')
       parsed_response = JSON.parse(response.body, symbolize_names: true)[:data]
 
-      expect(parsed_response.all? {|record| record[:type] == "merchants" }).to be true
+      expect(parsed_response.all? {|record| record[:type] == "merchant" }).to be true
       expect(parsed_response.count).to eq(20)
     end
 
