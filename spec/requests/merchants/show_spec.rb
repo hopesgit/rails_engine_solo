@@ -20,11 +20,10 @@ describe 'When I send a get request to "/api/v1/merchants/:id"' do
   end
 
   # sad path
-  xit 'can\'t return data for a merchant that doesn\'t exist' do
+  it 'can\'t return data for a merchant that doesn\'t exist' do
     get '/api/v1/merchants/1000000'
+    rescue ActiveRecord::RecordNotFound
 
-    parsed_response = JSON.parse(response.body)
-
-    expect(parsed_response).to eq([])
+    expect(response).to be nil
   end
 end

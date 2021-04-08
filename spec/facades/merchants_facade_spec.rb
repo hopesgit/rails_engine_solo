@@ -66,5 +66,30 @@ describe MerchantsFacade do
         expect(test).to eq(merchant)
       end
     end
+
+    describe '.find_items' do
+      it 'finds the merchant\'s items' do
+        merchant = create(:merchant)
+        5.times do
+          create(:item, merchant_id: merchant.id)
+        end
+
+        test = MerchantsFacade.find_items(merchant.id)
+
+        expect(test).to eq(merchant.items)
+        expect(test.count).to eq(5)
+        expect(test.all? {|merchant_item| merchant_item.merchant_id == merchant.id}).to be true
+
+        merchant2 = create(:merchant)
+        5.times do
+          create(:item, merchant_id: merchant2.id)
+        end
+
+        test2 = MerchantsFacade.find_items(merchant2.id)
+
+        expect(test2).to_not eq(test)
+        expect(test2.count).to_not eq(10)
+      end
+    end
   end
 end

@@ -73,5 +73,6 @@ describe 'When I send a request to "/api/v1/merchants"' do
 
     # sad path
     # test if input is a string that can't be converted to integer
+    # test if page is entered as 0 or less
   end
 end
