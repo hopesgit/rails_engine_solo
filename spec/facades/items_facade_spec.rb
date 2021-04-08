@@ -70,6 +70,24 @@ describe ItemsFacade do
       end
     end
 
+    describe '.new_item' do
+      it 'creates an item' do
+        merchant = create(:merchant)
+        info = {
+          name: "Baby soap",
+          description: "Soap for babies",
+          unit_price: 6.67,
+          merchant_id: merchant.id
+        }
+
+        test = ItemsFacade.new_item(info)
+        expect(test.name).to eq(info[:name])
+        expect(test.description).to eq(info[:description])
+        expect(test.unit_price).to eq(info[:unit_price])
+        expect(test.merchant_id).to eq(info[:merchant_id])
+      end
+    end
+
     describe '.find_items' do
       xit 'finds the merchant\'s items' do
         merchant = create(:merchant)

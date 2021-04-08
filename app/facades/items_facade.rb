@@ -10,4 +10,8 @@ class ItemsFacade
   def self.show(id)
     Item.find(id)
   end
+
+  def self.new_item(info)
+    Item.create(info)
+  end
 end

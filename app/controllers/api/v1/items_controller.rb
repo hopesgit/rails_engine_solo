@@ -16,4 +16,13 @@ class Api::V1::ItemsController < ApplicationController
   def show
     render json: ItemSerializer.new(ItemsFacade.show(params[:id])).serialized_json
   end
+
+  def create
+    render json: ItemSerializer.new(ItemsFacade.new_item(create_params)).serialized_json
+  end
+
+  private
+  def create_params
+    params.require(:item).permit(:name, :description, :unit_price, :merchant_id)
+  end
 end
