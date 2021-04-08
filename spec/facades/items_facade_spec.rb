@@ -52,7 +52,7 @@ describe ItemsFacade do
       end
 
       it 'only reports the number of records available' do
-        items = Item.all
+        items = @items_1 + @items_2
         test = ItemsFacade.index(50)
 
         expect(test).to eq(items)
