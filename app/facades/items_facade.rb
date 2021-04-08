@@ -6,4 +6,8 @@ class ItemsFacade
     start = (page - 1) * per_page
     Item.offset(start).first(per_page)
   end
+
+  def self.show(id)
+    Item.find(id)
+  end
 end

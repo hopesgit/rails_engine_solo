@@ -12,4 +12,8 @@ class Api::V1::ItemsController < ApplicationController
 
     render json: ItemSerializer.new(all).serialized_json
   end
+
+  def show
+    render json: ItemSerializer.new(ItemsFacade.show(params[:id])).serialized_json
+  end
 end

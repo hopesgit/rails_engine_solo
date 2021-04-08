@@ -61,11 +61,12 @@ describe ItemsFacade do
     end
 
     describe '.show' do
-      xit 'fetches a merchant' do
+      it 'fetches an item' do
         merchant = create(:merchant)
-        test = ItemsFacade.show(merchant.id)
+        item = create(:item, merchant_id: merchant.id)
+        test = ItemsFacade.show(item.id)
 
-        expect(test).to eq(merchant)
+        expect(test).to eq(item)
       end
     end
 
