@@ -1,8 +1,13 @@
 # Rails Engine
 
-This is a sales API made in a Rails backend!
+This is a sales API made in a Ruby on Rails backend!
 
-Sales engine in Rails... Rails engine...
+Sales engine in Rails... Rails Engine...
+
+* Endpoints
+- `get 'api/v1/merchants'` - to get all merchants loaded in the database
+- `get 'api/v1/merchants/{merchant id}'` - to get a specific merchant's details
+- `get 'api/v1/merchants/{merchant id}/items'` - to get the items in the database that belong to a merchant
 
 * Ruby version
   * 2.5.3
@@ -16,8 +21,7 @@ Sales engine in Rails... Rails engine...
 
 * Database creation
 
-Simply run `rails db:create` in your terminal/command line!
-Once your database has been created, run `rails db:{migrate,seed}` and let rails do the rest!
+Simply run `rails db:setup` in your terminal/command line!
 
 * How to run the test suite
 
