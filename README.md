@@ -16,6 +16,7 @@ This is a sales API made in a Ruby on Rails backend! Sales engine in Rails... Ra
 - `get 'api/v1/items'` - to get all items in the database.
 - `get 'api/v1/items/{item id}'` - to get information for a specific item.
 - `post 'api/v1/items'` - This requires a JSON body with item attributes. Use to create a new item.
+- `patch 'api/v1/items/{item id}'` - This requires a JSON body with the attributes you wish to change. Use to update an item.
 - `delete 'api/v1/items/{item id}'` - to delete an item in the database.
 
 ### Notes
