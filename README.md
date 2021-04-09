@@ -18,6 +18,7 @@ This is a sales API made in a Ruby on Rails backend! Sales engine in Rails... Ra
 - `post 'api/v1/items'` - This requires a JSON body with item attributes. Use to create a new item.
 - `patch 'api/v1/items/{item id}'` - This requires a JSON body with the attributes you wish to change. Use to update an item.
 - `delete 'api/v1/items/{item id}'` - to delete an item in the database.
+- `get 'api/v1/items/{item id}/merchant'` - to fetch merchant information for the given item id
 
 ### Notes
 the all-merchant and all-item endpoints support these modifiers, sent as params:
