@@ -23,4 +23,8 @@ class ItemsFacade
   def self.destroy(id)
     Item.destroy(id)
   end
+
+  def self.find_merchant(item_id)
+    Item.find(item_id).merchant
+  end
 end
