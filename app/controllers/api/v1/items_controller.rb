@@ -21,6 +21,12 @@ class Api::V1::ItemsController < ApplicationController
     render json: ItemSerializer.new(ItemsFacade.new_item(create_params)).serialized_json
   end
 
+  def update
+    # binding.pry
+    Item.find(params[:id]).update(update_params)
+    render json: ItemSerializer.new(Item.find(params[:id])).serialized_json
+  end
+
   def destroy
     render json: ItemSerializer.new(ItemsFacade.destroy(params[:id])).serialized_json
   end
@@ -28,6 +34,10 @@ class Api::V1::ItemsController < ApplicationController
   private
 
   def create_params
+    params.require(:item).permit(:name, :description, :unit_price, :merchant_id)
+  end
+
+  def update_params
     params.require(:item).permit(:name, :description, :unit_price, :merchant_id)
   end
 end
