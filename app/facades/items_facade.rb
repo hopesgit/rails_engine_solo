@@ -14,4 +14,8 @@ class ItemsFacade
   def self.new_item(info)
     Item.create(info)
   end
+
+  def self.destroy(id)
+    Item.destroy(id)
+  end
 end

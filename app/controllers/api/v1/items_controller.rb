@@ -22,7 +22,7 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def destroy
-    render json: ItemSerializer.new(Item.destroy(params[:id])).serialized_json
+    render json: ItemSerializer.new(ItemsFacade.destroy(params[:id])).serialized_json
   end
 
   private

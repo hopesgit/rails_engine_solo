@@ -88,6 +88,18 @@ describe ItemsFacade do
       end
     end
 
+    describe '.destroy' do
+      it 'destroys the item' do
+        merchant = create(:merchant)
+        item = create(:item, merchant_id: merchant.id)
+        item_id = item.id
+
+        expect(Item.find(item_id)).to eq(item)
+        ItemsFacade.destroy(item_id)
+        expect{ Item.find(item_id) }.to raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
+
     describe '.find_items' do
       xit 'finds the merchant\'s items' do
         merchant = create(:merchant)
