@@ -22,9 +22,7 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def update
-    # binding.pry
-    Item.find(params[:id]).update(update_params)
-    render json: ItemSerializer.new(Item.find(params[:id])).serialized_json
+    render json: ItemSerializer.new(ItemsFacade.update(params[:id], update_params)).serialized_json
   end
 
   def destroy

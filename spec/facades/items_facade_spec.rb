@@ -88,6 +88,26 @@ describe ItemsFacade do
       end
     end
 
+    describe '.update' do
+      it 'should update the indicated item' do
+        merchant = create(:merchant)
+        item = create(:item, merchant_id: merchant.id)
+
+        data = {
+          name: "Hello World!",
+          description: "The first thing you need to know!"
+        }
+
+        test = ItemsFacade.update(item.id, data)
+
+        expect(test.name).to_not eq(item.name)
+        expect(test.description).to_not eq(item.description)
+        expect(test.id).to eq(item.id)
+        expect(test.merchant_id).to eq(item.merchant_id)
+        expect(test.unit_price).to eq(item.unit_price)
+      end
+    end
+
     describe '.destroy' do
       it 'destroys the item' do
         merchant = create(:merchant)

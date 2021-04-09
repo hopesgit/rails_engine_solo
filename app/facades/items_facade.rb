@@ -15,6 +15,11 @@ class ItemsFacade
     Item.create(info)
   end
 
+  def self.update(id, params)
+    Item.find(id).update(params)
+    Item.find(id)
+  end
+
   def self.destroy(id)
     Item.destroy(id)
   end
