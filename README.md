@@ -1,6 +1,6 @@
 # Rails Engine
 ## Author
-Hope McGee (Gochnour) | [LinkedIn]() | [GitHub]()
+Hope McGee (Gochnour) | [LinkedIn](https://www.linkedin.com/in/hope-mcgee/) | [GitHub](github.com/hopesgit)
 
 ## Description
 This is a sales API made in a Ruby on Rails backend! Sales engine in Rails... Rails Engine...
@@ -26,24 +26,24 @@ the all-merchant and all-item endpoints support these modifiers, sent as params:
 - `page`: Use this to get the next set of records or to display a particular record set.
 
 ## Setup, Versioning, and Database
-* Ruby version
-  * 2.5.3
+Ruby version
+* 2.5.3
 
-* Rails version
-  * 5.2.5
+Rails version
+* 5.2.5
 
-* Configuration
+Configuration
 
-Be sure to run `bundle install` in your terminal to get started!
+* Be sure to run `bundle install` in your terminal to get started!
 
-* Database creation
+Database creation
 
-Simply run `rails db:setup` in your terminal/command line!
+* Simply run `rails db:setup` in your terminal/command line!
 
-* How to run the test suite
+How to run the test suite
 
-Run `bundle exec rspec` in your terminal to get a report from the test suite.
+* Run `bundle exec rspec` in your terminal to get a report from the test suite.
 
-* How to test this app for yourself
+How to test this app for yourself
 
-Once the other setup steps have been taken, run `rails s` in your terminal to create a local server. With that running, you can make your own requests using your browser or a more sophisticated query interface, such as Postman.
+* Once the other setup steps have been taken, run `rails s` in your terminal to create a local server. With that running, you can make your own requests using your browser or a more sophisticated query interface, such as Postman.
